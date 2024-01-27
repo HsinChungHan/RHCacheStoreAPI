@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "rhcachestore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HsinChungHan/RHCacheStore.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "534cb7bed1fedc94f7c65e303b2ec51b8076ca77"
+      }
+    }
+  ],
+  "version" : 2
+}
