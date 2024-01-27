@@ -9,6 +9,7 @@ import Foundation
 import RHCacheStore
 
 public struct RHCacheStoreAPIImplementationFactory: RHCacheStoreAPIImplementationFactoryProtocol  {
+    public init() {}
     public func makeCodableStore(with storeURL: URL, expiryTimeInterval: TimeInterval?) -> RHCacheStoreAPIProtocol {
         return CodableStoreImplementation.init(storeURL: storeURL, expiryTimeInterval: expiryTimeInterval)
     }
