@@ -8,11 +8,11 @@
 import Foundation
 import RHCacheStore
 
-class ActorCodableStoreImplementation: RHActorCacheStoreAPIProtocol {
+actor ActorCodableStoreImplementation: RHActorCacheStoreAPIProtocol {
     private lazy var store = makeStore()
     
     private let storeURL: URL
-    var expiryTimeInterval: TimeInterval?
+    let expiryTimeInterval: TimeInterval?
     init(storeURL: URL, expiryTimeInterval: TimeInterval? = nil) {
         self.storeURL = storeURL
         self.expiryTimeInterval = expiryTimeInterval
