@@ -17,4 +17,8 @@ public struct RHCacheStoreAPIImplementationFactory: RHCacheStoreAPIImplementatio
     public func makeActorCodableStore(with storeURL: URL, expiryTimeInterval: TimeInterval?=nil) -> RHActorCacheStoreAPIProtocol {
         ActorCodableStoreImplementation.init(storeURL: storeURL, expiryTimeInterval: expiryTimeInterval)
     }
+    
+    public func makeActorCodableImageDataStore(with storeURL: URL) -> RHActorImageDataCacheStoreAPIProtocol {
+        RHActorImageDataCacheStoreAPIImplemenntation(storeURL: storeURL)
+    }
 }
