@@ -9,7 +9,9 @@ import Foundation
 import RHCacheStore
 
 class ActorCodableStoreImplementation: RHActorCacheStoreAPIProtocol {
-    let storeURL: URL
+    private lazy var store = makeStore()
+    
+    private let storeURL: URL
     var expiryTimeInterval: TimeInterval?
     init(storeURL: URL, expiryTimeInterval: TimeInterval? = nil) {
         self.storeURL = storeURL
@@ -29,9 +31,9 @@ class ActorCodableStoreImplementation: RHActorCacheStoreAPIProtocol {
     }
 }
 
-// MARK: - Conputed Properties
-extension ActorCodableStoreImplementation {
-    var store: ActorCacheStore {
+// MARK: - Factory methods
+private extension ActorCodableStoreImplementation {
+    func makeStore() -> ActorCacheStore{
         guard let expiryTimeInterval else {
             return ActorCodableCacheStore.init(storeURL: storeURL)
         }
