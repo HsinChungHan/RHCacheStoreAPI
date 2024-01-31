@@ -29,6 +29,14 @@ class ActorCodableStoreImplementation: RHActorCacheStoreAPIProtocol {
     func retrieve(with id: String) async -> RHCacheStore.RetriveCacheResult {
         await store.retrieve(with: id)
     }
+    
+    func saveCache() async throws {
+        try await store.saveCache()
+    }
+    
+    func loadCache() async throws {
+        try await store.loadCache()
+    }
 }
 
 // MARK: - Factory methods
