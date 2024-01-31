@@ -9,5 +9,6 @@ import Foundation
 
 public protocol RHCacheStoreAPIImplementationFactoryProtocol {
     func makeCodableStore(with storeURL: URL, expiryTimeInterval: TimeInterval?) -> RHCacheStoreAPIProtocol
+    func makeActorCodableStore(with storeURL: URL, expiryTimeInterval: TimeInterval?) -> RHActorCacheStoreAPIProtocol
 }
 
